@@ -1,0 +1,8 @@
+import { BatchRequestDocument, BatchRequestsOptions, RawRequestOptions, RequestDocument, RequestOptions, BatchRequestsExtendedOptions, RawRequestExtendedOptions, RequestExtendedOptions, Variables, VariablesAndRequestHeaders } from './types';
+import * as Dom from './types.dom';
+export declare function parseRequestArgs<V extends Variables = Variables>(documentOrOptions: RequestDocument | RequestOptions<V>, variables?: V, requestHeaders?: Dom.RequestInit['headers']): RequestOptions<V>;
+export declare function parseRawRequestArgs<V extends Variables = Variables>(queryOrOptions: string | RawRequestOptions<V>, variables?: V, requestHeaders?: Dom.RequestInit['headers']): RawRequestOptions<V>;
+export declare function parseBatchRequestArgs<V extends Variables = Variables>(documentsOrOptions: BatchRequestDocument<V>[] | BatchRequestsOptions<V>, requestHeaders?: Dom.RequestInit['headers']): BatchRequestsOptions<V>;
+export declare function parseRequestExtendedArgs<V extends Variables = Variables>(urlOrOptions: string | RequestExtendedOptions<V>, document?: RequestDocument, ...variablesAndRequestHeaders: VariablesAndRequestHeaders<V>): RequestExtendedOptions<V>;
+export declare function parseRawRequestExtendedArgs<V extends Variables = Variables>(urlOrOptions: string | RawRequestExtendedOptions<V>, query?: string, ...variablesAndRequestHeaders: VariablesAndRequestHeaders<V>): RawRequestExtendedOptions<V>;
+export declare function parseBatchRequestsExtendedArgs<V extends Variables = Variables>(urlOrOptions: string | BatchRequestsExtendedOptions<V>, documents?: BatchRequestDocument<V>[], requestHeaders?: Dom.RequestInit['headers']): BatchRequestsExtendedOptions<V>;
