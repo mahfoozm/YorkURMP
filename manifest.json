@@ -5,7 +5,7 @@
   "version": "1.0",
   "permissions": ["activeTab", "https://www.ratemyprofessors.com/"],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["back.js"]
   },
   "content_scripts": [
     {

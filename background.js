@@ -1,17 +1,23 @@
-// rework this, graphql is deprecated
+const ratings = require('@mtucourses/rate-my-professors').default;
+console.log("background script loaded");
 
-const rateMyProfessors = require('@mtucourses/rate-my-professors').default;
+(async () => {
+  chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+    console.log('received message from content script:', request)
+    console.log(request.professorName);
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'fetch-rating') {
-    const professorName = request.professorName;
-    rateMyProfessors.searchTeacher(professorName)
-      .then(rating => {
-        sendResponse({ rating });
-      })
-      .catch(error => {
-        sendResponse({ error });
-      });
-    return true;  // Required for sendResponse to work
-  }
-});
+    const profName = request.professorName;
+    const basicProfInfo = await ratings.searchTeacher(profName, 'U2Nob29sLTE0OTU=');
+
+    console.log(basicProfInfo);
+    const id = basicProfInfo[0].id;
+
+    //get the profs avg rating
+    const profInfo = await ratings.getTeacher(id);
+    const avgRating = profInfo.avgRating;
+    
+    console.log(avgRating);
+    sendResponse({ message: 'test' });
+    //}
+  });
+})();
