@@ -4,5 +4,10 @@
     "@mtucourses/rate-my-professors": "^2.2.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }

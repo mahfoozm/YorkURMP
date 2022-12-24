@@ -7,9 +7,12 @@ professorLinks.forEach(link => {
   chrome.runtime.sendMessage({ professorName }, (response) => {
 
     console.log(response);
-       
-      const avgRating = response;
-      link.insertAdjacentHTML('afterend', `<div>${avgRating}</div>`);
+
+    if (response.error) {
+      link.insertAdjacentHTML('afterend', `<div>Error: ${response.error}</div>`);
+    } else {
+      link.insertAdjacentHTML('afterend', `<div>${response}/5</div>`);
+    }
 
   });
 });
