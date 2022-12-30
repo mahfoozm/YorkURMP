@@ -25,7 +25,7 @@ professorLinks.forEach(async (link) => {
     port.onMessage.addListener((teacher) => {
       if (teacher.error) {
         // Insert the error message instead of the average rating
-        insertError(link);
+        insertNoProfError(link);
       } else {
         
         console.log('received teacher object: ', teacher);
@@ -34,13 +34,21 @@ professorLinks.forEach(async (link) => {
         const avgRating = teacher.avgRating;
         const numRatings = teacher.numRatings;
         const avgDifficulty = teacher.avgDifficulty;
+        const wouldTakeAgainPercent = parseInt(teacher.wouldTakeAgainPercent);
         const legacyId = teacher.legacyId;
         console.log('content.js listener: ', avgRating);
         console.log('content.js listener: ', numRatings);
         console.log('content.js listener: ', legacyId);
 
+        // if the professor has no ratings, RMP will return -1 for this field
+        if (wouldTakeAgainPercent === -1) {
+          insertNoRatingsError(link, legacyId);
+          return;
+        }
+
       // Insert the average rating next to the link
       insertNumRatings(link, numRatings, legacyId);
+      insertWouldTakeAgainPercent(link, wouldTakeAgainPercent);
       insertAvgDifficulty(link, avgDifficulty);
       insertRating(link, avgRating);
     }
@@ -61,12 +69,21 @@ function insertAvgDifficulty(link, avgDifficulty) {
   link.insertAdjacentHTML('afterend', `<div>Difficulty: ${avgDifficulty}/5</div>`);
 }
 
+function insertWouldTakeAgainPercent(link, wouldTakeAgainPercent) {
+  console.log('insertWouldTakeAgainPercent: ', wouldTakeAgainPercent);
+  link.insertAdjacentHTML('afterend', `<div class="rating">${wouldTakeAgainPercent}% of students would take again.</div>`);
+}
+
 function insertNumRatings(link, numRatings, legacyId) {
   const profLink = `<a href='https://www.ratemyprofessors.com/professor?tid=${legacyId}'>${numRatings} ratings</a>`;
   console.log('insertNumRatings: ', numRatings);
   link.insertAdjacentHTML('afterend', `<div>${profLink}</div>`);
 }
 
-function insertError(link) {
-  link.insertAdjacentHTML('afterend', `<div class="rating">Error: the professor is not registered on RateMyProfessors.</div>`);
+function insertNoRatingsError(link, legacyId) {
+  link.insertAdjacentHTML('afterend', `<div class="rating">Error: this professor has <a href='https://www.ratemyprofessors.com/professor?tid=${legacyId}'>no ratings on RateMyProfessors.</a></div>`);
+}
+
+function insertNoProfError(link) {
+  link.insertAdjacentHTML('afterend', `<div class="rating">Error: this professor is not registered on RateMyProfessors.</div>`);
 }
