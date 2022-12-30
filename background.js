@@ -1,9 +1,13 @@
-// background.js
+// This file is responsible for handling the communication between the extension and the website
+// It sends a message to the background script to retrieve the professor's info from RMP
+// The background script then sends the info back to this script, which inserts it into the page
+// The background script is necessary because the website is not allowed to make requests to RMP
+// due to CORS restrictions.
 
 const {GraphQLClient, gql} = require('graphql-request');
-console.log("background.js loaded");
 
-const searchTeacherQuery = gql`
+// GraphQL queries to get the professor's info from RMP
+const searchProfessorQuery = gql`
 query NewSearchTeachersQuery($text: String!, $schoolID: ID!)
 {
   newSearch {
@@ -26,7 +30,7 @@ query NewSearchTeachersQuery($text: String!, $schoolID: ID!)
 `;
 
 
-const getTeacherQuery = gql`
+const getProfessorQuery = gql`
 query TeacherRatingsPageQuery(
   $id: ID!
 ) {
@@ -53,7 +57,9 @@ query TeacherRatingsPageQuery(
 }
 `;
 
+// publicly available token, yorkU school ID
 const AUTH_TOKEN = 'dGVzdDp0ZXN0';
+const SCHOOL_ID = 'U2Nob29sLTE0OTU=';
 
 const client = new GraphQLClient('https://www.ratemyprofessors.com/graphql', {
   headers: {
@@ -61,21 +67,12 @@ const client = new GraphQLClient('https://www.ratemyprofessors.com/graphql', {
   }
 });
 
-const searchTeacher = async (name, schoolID) => {
-  console.log('searchTeacher called');
-  console.log('searchTeacher: ', name);
-  console.log('searchTeacher: ', schoolID);
-  expected = 'Hossein Kassiri';
-  console.log('searchTeacher: ', expected);
-  const normalizedName = name.normalize('NFKD');
-  console.log(expected.localeCompare(normalizedName));
-  console.log('searchTeacher: ', name);
-  const response = await client.request(searchTeacherQuery, {
-    text: normalizedName,
+const searchProfessor = async (name, schoolID) => {
+  const response = await client.request(searchProfessorQuery, {
+    text: name,
     schoolID
   });
 
-  console.log('response: ', response);
   if (response.newSearch.teachers === null) {
     return [];
   }
@@ -83,46 +80,32 @@ const searchTeacher = async (name, schoolID) => {
   return response.newSearch.teachers.edges.map((edge) => edge.node);
 };
 
-const getTeacher = async (id) => {
-  const response = await client.request(getTeacherQuery, {id});
-
+const getProfessor = async (id) => {
+  const response = await client.request(getProfessorQuery, {id});
   return response.node;
 };
 
-async function sendTeacherInfo(professorName) {
-  console.log('sendTeacherInfo func: ', professorName);
-  const teachers = await searchTeacher(professorName, 'U2Nob29sLTE0OTU=');
-  console.log('sendTeacherInfo func: ', teachers);
+async function sendProfessorInfo(professorName) {
+  // normalize the professor's name to match the format used by RMP's GraphQL API
+  // (the source of all of my pain)
+  const normalizedName = professorName.normalize('NFKD');
+  const professors = await searchProfessor(normalizedName, SCHOOL_ID);
 
-  if (teachers.length === 0) {
+  if (professors.length === 0) {
     return { error: 'Professor not found' };
   }
   
-  const teacherID = teachers[0].id;
-  const teacher = await getTeacher(teacherID);
-  console.log('sendTeacherInfo func: ', teacher);
-
-  return teacher;
+  const professorID = professors[0].id;
+  const professor = await getProfessor(professorID);
+  return professor;
 }
 
-// Wait for a connection from the content script
 chrome.runtime.onConnect.addListener((port) => {
-  console.log('received connection from content script');
-
-  // When a message is received from the content script...
   port.onMessage.addListener((request) => {
-    console.log('received message from content script:', request);
-
-    // Retrieve the teacher object for the specified professor
-    sendTeacherInfo(request.professorName).then((teacher) => {
-      console.log('received teacher object: ', teacher);
-
-      // Send the teacher object back to the content script
-      port.postMessage(teacher);
+    sendProfessorInfo(request.professorName).then((professor) => {
+      port.postMessage(professor);
     }).catch((error) => {
-      console.log('error:', error);
-
-      // Send the error message back to the content script
+      console.log('Error:', error);
       port.postMessage({error});
     });
   });

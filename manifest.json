@@ -3,13 +3,15 @@
   "name": "YorkRMP",
   "description": "RMP extension for YorkU's course page.",
   "version": "1.0",
-  "permissions": ["activeTab", "https://www.ratemyprofessors.com/"],
+  "permissions": [
+    "activeTab", "webRequest", "https://w2prod.sis.yorku.ca/*", "https://www.ratemyprofessors.com/*"
+  ],
   "background": {
-    "scripts": ["back.js"]
+    "scripts": ["background-packed.js"]
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://w2prod.sis.yorku.ca/*"],
       "js": ["content.js"]
     }
   ]
