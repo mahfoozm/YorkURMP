@@ -1,5 +1,4 @@
 const {GraphQLClient, gql} = require('graphql-request');
-console.log("background.js loaded");
 
 const searchTeacherQuery = gql`
 query NewSearchTeachersQuery($text: String!, $schoolID: ID!)
@@ -59,13 +58,9 @@ const client = new GraphQLClient('https://www.ratemyprofessors.com/graphql', {
   }
 });
 
-const searchTeacher = async (professorName, schoolID) => {
-  console.log("searchTeacher called");
-  console.log(professorName);
-  console.log(typeof professorName);
-  console.log(schoolID);
+const searchTeacher = async (name, schoolID) => {
   const response = await client.request(searchTeacherQuery, {
-    text: professorName,
+    text: name,
     schoolID
   });
 
@@ -82,25 +77,19 @@ const getTeacher = async (id) => {
   return response.node;
 };
 
-async function getAvgRating(professorName) {
-  console.log('1: ', professorName);
-  const teachers = await searchTeacher(professorName, 'U2Nob29sLTE0OTU=');
-  console.log(teachers);
-  const teacherID = teachers[0].id;
-  const teacher = await getTeacher(teacherID);
-  const avgRating = teacher.avgRating;
-  console.log(teacher);
-  console.log(avgRating);
-
-  return avgRating;
+async function main() {
+    const profName = 'Hossein Kassiri';
+    console.log(profName);
+    const teachers = await searchTeacher(profName, 'U2Nob29sLTE0OTU=');
+    console.log(teachers);
+    const teacherID = teachers[0].id;
+    const teacher = await getTeacher(teacherID);
+    const avgRating = teacher.avgRating;
+    console.log(teacher);
+    console.log(avgRating);
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log('received message from content script:', request);
-  console.log('test:', request.professorName);
-
-  getAvgRating(request.professorName).then(response => {
-    sendResponse(response);
+main().catch((error) => {
+    console.error(error);
   });
-  return true;
-});
+  
