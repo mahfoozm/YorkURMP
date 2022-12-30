@@ -17,4 +17,6 @@ If a professor is found, but they have no ratings, the following error will be d
 
 ![No ratings](https://i.imgur.com/wieXkVR.png)
 
-This extension can only be added as an unpacked extension for the time being, as it needs to be converted from MV2 to MV3 to be uploaded on the Chrome Web Store.
+This extension can only be added as an unpacked extension for the time being, as it needs to be converted from MV2 to MV3 to be uploaded on the Chrome Web Store. See the releases tab for an easier download/installation instructions. 
+
+Firefox/Safari support is in the works.
