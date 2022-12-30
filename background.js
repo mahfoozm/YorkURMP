@@ -1,3 +1,5 @@
+// background.js
+
 const {GraphQLClient, gql} = require('graphql-request');
 console.log("background.js loaded");
 
@@ -59,16 +61,21 @@ const client = new GraphQLClient('https://www.ratemyprofessors.com/graphql', {
   }
 });
 
-const searchTeacher = async (professorName, schoolID) => {
-  console.log("searchTeacher called");
-  console.log(professorName);
-  console.log(typeof professorName);
-  console.log(schoolID);
+const searchTeacher = async (name, schoolID) => {
+  console.log('searchTeacher called');
+  console.log('searchTeacher: ', name);
+  console.log('searchTeacher: ', schoolID);
+  expected = 'Hossein Kassiri';
+  console.log('searchTeacher: ', expected);
+  const normalizedName = name.normalize('NFKD');
+  console.log(expected.localeCompare(normalizedName));
+  console.log('searchTeacher: ', name);
   const response = await client.request(searchTeacherQuery, {
-    text: professorName,
+    text: normalizedName,
     schoolID
   });
 
+  console.log('response: ', response);
   if (response.newSearch.teachers === null) {
     return [];
   }
@@ -82,25 +89,41 @@ const getTeacher = async (id) => {
   return response.node;
 };
 
-async function getAvgRating(professorName) {
-  console.log('1: ', professorName);
+async function sendTeacherInfo(professorName) {
+  console.log('sendTeacherInfo func: ', professorName);
   const teachers = await searchTeacher(professorName, 'U2Nob29sLTE0OTU=');
-  console.log(teachers);
+  console.log('sendTeacherInfo func: ', teachers);
+
+  if (teachers.length === 0) {
+    return { error: 'Professor not found' };
+  }
+  
   const teacherID = teachers[0].id;
   const teacher = await getTeacher(teacherID);
-  const avgRating = teacher.avgRating;
-  console.log(teacher);
-  console.log(avgRating);
+  console.log('sendTeacherInfo func: ', teacher);
 
-  return avgRating;
+  return teacher;
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log('received message from content script:', request);
-  console.log('test:', request.professorName);
+// Wait for a connection from the content script
+chrome.runtime.onConnect.addListener((port) => {
+  console.log('received connection from content script');
 
-  getAvgRating(request.professorName).then(response => {
-    sendResponse(response);
+  // When a message is received from the content script...
+  port.onMessage.addListener((request) => {
+    console.log('received message from content script:', request);
+
+    // Retrieve the teacher object for the specified professor
+    sendTeacherInfo(request.professorName).then((teacher) => {
+      console.log('received teacher object: ', teacher);
+
+      // Send the teacher object back to the content script
+      port.postMessage(teacher);
+    }).catch((error) => {
+      console.log('error:', error);
+
+      // Send the error message back to the content script
+      port.postMessage({error});
+    });
   });
-  return true;
 });
