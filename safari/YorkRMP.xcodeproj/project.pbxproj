@@ -1,0 +1,939 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		390AD94D296127540087028B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD94C296127540087028B /* AppDelegate.swift */; };
+		390AD94F296127540087028B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD94E296127540087028B /* SceneDelegate.swift */; };
+		390AD952296127540087028B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390AD950296127540087028B /* LaunchScreen.storyboard */; };
+		390AD955296127540087028B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390AD953296127540087028B /* Main.storyboard */; };
+		390AD95E296127540087028B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD95D296127540087028B /* AppDelegate.swift */; };
+		390AD961296127540087028B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390AD95F296127540087028B /* Main.storyboard */; };
+		390AD969296127540087028B /* YorkRMP Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 390AD968296127540087028B /* YorkRMP Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		390AD973296127540087028B /* YorkRMP Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 390AD972296127540087028B /* YorkRMP Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		390AD979296127540087028B /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 390AD93C296127530087028B /* Main.html */; };
+		390AD97A296127540087028B /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 390AD93C296127530087028B /* Main.html */; };
+		390AD97B296127540087028B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 390AD93E296127530087028B /* Icon.png */; };
+		390AD97C296127540087028B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 390AD93E296127530087028B /* Icon.png */; };
+		390AD97D296127540087028B /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 390AD93F296127530087028B /* Style.css */; };
+		390AD97E296127540087028B /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 390AD93F296127530087028B /* Style.css */; };
+		390AD97F296127540087028B /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 390AD940296127530087028B /* Script.js */; };
+		390AD980296127540087028B /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 390AD940296127530087028B /* Script.js */; };
+		390AD981296127540087028B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD941296127530087028B /* ViewController.swift */; };
+		390AD982296127540087028B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD941296127530087028B /* ViewController.swift */; };
+		390AD983296127540087028B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 390AD942296127540087028B /* Assets.xcassets */; };
+		390AD984296127540087028B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 390AD942296127540087028B /* Assets.xcassets */; };
+		390AD985296127540087028B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD944296127540087028B /* SafariWebExtensionHandler.swift */; };
+		390AD986296127540087028B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390AD944296127540087028B /* SafariWebExtensionHandler.swift */; };
+		390AD99C296127540087028B /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = 390AD998296127540087028B /* icon128.png */; };
+		390AD99D296127540087028B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 390AD999296127540087028B /* manifest.json */; };
+		390AD99E296127540087028B /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 390AD99A296127540087028B /* content.js */; };
+		390AD99F296127540087028B /* background-packed.js in Resources */ = {isa = PBXBuildFile; fileRef = 390AD99B296127540087028B /* background-packed.js */; };
+		390AD9A0296127540087028B /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = 390AD998296127540087028B /* icon128.png */; };
+		390AD9A1296127540087028B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 390AD999296127540087028B /* manifest.json */; };
+		390AD9A2296127540087028B /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 390AD99A296127540087028B /* content.js */; };
+		390AD9A3296127540087028B /* background-packed.js in Resources */ = {isa = PBXBuildFile; fileRef = 390AD99B296127540087028B /* background-packed.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		390AD96A296127540087028B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 390AD936296127530087028B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 390AD967296127540087028B;
+			remoteInfo = "YorkRMP Extension (iOS)";
+		};
+		390AD974296127540087028B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 390AD936296127530087028B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 390AD971296127540087028B;
+			remoteInfo = "YorkRMP Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		390AD98C296127540087028B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				390AD969296127540087028B /* YorkRMP Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD993296127540087028B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				390AD973296127540087028B /* YorkRMP Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		390AD93D296127530087028B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		390AD93E296127530087028B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		390AD93F296127530087028B /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		390AD940296127530087028B /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		390AD941296127530087028B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		390AD942296127540087028B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		390AD944296127540087028B /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		390AD949296127540087028B /* YorkRMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YorkRMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		390AD94C296127540087028B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		390AD94E296127540087028B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		390AD951296127540087028B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		390AD954296127540087028B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		390AD956296127540087028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		390AD95B296127540087028B /* YorkRMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YorkRMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		390AD95D296127540087028B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		390AD960296127540087028B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		390AD962296127540087028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		390AD963296127540087028B /* YorkRMP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YorkRMP.entitlements; sourceTree = "<group>"; };
+		390AD968296127540087028B /* YorkRMP Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "YorkRMP Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		390AD96D296127540087028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		390AD972296127540087028B /* YorkRMP Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "YorkRMP Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		390AD977296127540087028B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		390AD978296127540087028B /* YorkRMP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YorkRMP.entitlements; sourceTree = "<group>"; };
+		390AD998296127540087028B /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon128.png; path = ../../safari/icon128.png; sourceTree = "<group>"; };
+		390AD999296127540087028B /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../safari/manifest.json; sourceTree = "<group>"; };
+		390AD99A296127540087028B /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content.js; path = ../../safari/content.js; sourceTree = "<group>"; };
+		390AD99B296127540087028B /* background-packed.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "background-packed.js"; path = "../../safari/background-packed.js"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		390AD946296127540087028B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD958296127540087028B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD965296127540087028B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD96F296127540087028B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		390AD935296127530087028B = {
+			isa = PBXGroup;
+			children = (
+				390AD93A296127530087028B /* Shared (App) */,
+				390AD943296127540087028B /* Shared (Extension) */,
+				390AD94B296127540087028B /* iOS (App) */,
+				390AD95C296127540087028B /* macOS (App) */,
+				390AD96C296127540087028B /* iOS (Extension) */,
+				390AD976296127540087028B /* macOS (Extension) */,
+				390AD94A296127540087028B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		390AD93A296127530087028B /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				390AD941296127530087028B /* ViewController.swift */,
+				390AD942296127540087028B /* Assets.xcassets */,
+				390AD93B296127530087028B /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		390AD93B296127530087028B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				390AD93C296127530087028B /* Main.html */,
+				390AD93E296127530087028B /* Icon.png */,
+				390AD93F296127530087028B /* Style.css */,
+				390AD940296127530087028B /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		390AD943296127540087028B /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				390AD997296127540087028B /* Resources */,
+				390AD944296127540087028B /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		390AD94A296127540087028B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				390AD949296127540087028B /* YorkRMP.app */,
+				390AD95B296127540087028B /* YorkRMP.app */,
+				390AD968296127540087028B /* YorkRMP Extension.appex */,
+				390AD972296127540087028B /* YorkRMP Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		390AD94B296127540087028B /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				390AD94C296127540087028B /* AppDelegate.swift */,
+				390AD94E296127540087028B /* SceneDelegate.swift */,
+				390AD950296127540087028B /* LaunchScreen.storyboard */,
+				390AD953296127540087028B /* Main.storyboard */,
+				390AD956296127540087028B /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		390AD95C296127540087028B /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				390AD95D296127540087028B /* AppDelegate.swift */,
+				390AD95F296127540087028B /* Main.storyboard */,
+				390AD962296127540087028B /* Info.plist */,
+				390AD963296127540087028B /* YorkRMP.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		390AD96C296127540087028B /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				390AD96D296127540087028B /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		390AD976296127540087028B /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				390AD977296127540087028B /* Info.plist */,
+				390AD978296127540087028B /* YorkRMP.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		390AD997296127540087028B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				390AD998296127540087028B /* icon128.png */,
+				390AD999296127540087028B /* manifest.json */,
+				390AD99A296127540087028B /* content.js */,
+				390AD99B296127540087028B /* background-packed.js */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		390AD948296127540087028B /* YorkRMP (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 390AD98D296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP (iOS)" */;
+			buildPhases = (
+				390AD945296127540087028B /* Sources */,
+				390AD946296127540087028B /* Frameworks */,
+				390AD947296127540087028B /* Resources */,
+				390AD98C296127540087028B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				390AD96B296127540087028B /* PBXTargetDependency */,
+			);
+			name = "YorkRMP (iOS)";
+			productName = "YorkRMP (iOS)";
+			productReference = 390AD949296127540087028B /* YorkRMP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		390AD95A296127540087028B /* YorkRMP (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 390AD994296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP (macOS)" */;
+			buildPhases = (
+				390AD957296127540087028B /* Sources */,
+				390AD958296127540087028B /* Frameworks */,
+				390AD959296127540087028B /* Resources */,
+				390AD993296127540087028B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				390AD975296127540087028B /* PBXTargetDependency */,
+			);
+			name = "YorkRMP (macOS)";
+			productName = "YorkRMP (macOS)";
+			productReference = 390AD95B296127540087028B /* YorkRMP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		390AD967296127540087028B /* YorkRMP Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 390AD989296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP Extension (iOS)" */;
+			buildPhases = (
+				390AD964296127540087028B /* Sources */,
+				390AD965296127540087028B /* Frameworks */,
+				390AD966296127540087028B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YorkRMP Extension (iOS)";
+			productName = "YorkRMP Extension (iOS)";
+			productReference = 390AD968296127540087028B /* YorkRMP Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		390AD971296127540087028B /* YorkRMP Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 390AD990296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP Extension (macOS)" */;
+			buildPhases = (
+				390AD96E296127540087028B /* Sources */,
+				390AD96F296127540087028B /* Frameworks */,
+				390AD970296127540087028B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YorkRMP Extension (macOS)";
+			productName = "YorkRMP Extension (macOS)";
+			productReference = 390AD972296127540087028B /* YorkRMP Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		390AD936296127530087028B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					390AD948296127540087028B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					390AD95A296127540087028B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					390AD967296127540087028B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					390AD971296127540087028B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 390AD939296127530087028B /* Build configuration list for PBXProject "YorkRMP" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 390AD935296127530087028B;
+			productRefGroup = 390AD94A296127540087028B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				390AD948296127540087028B /* YorkRMP (iOS) */,
+				390AD95A296127540087028B /* YorkRMP (macOS) */,
+				390AD967296127540087028B /* YorkRMP Extension (iOS) */,
+				390AD971296127540087028B /* YorkRMP Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		390AD947296127540087028B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD97B296127540087028B /* Icon.png in Resources */,
+				390AD952296127540087028B /* LaunchScreen.storyboard in Resources */,
+				390AD979296127540087028B /* Main.html in Resources */,
+				390AD97F296127540087028B /* Script.js in Resources */,
+				390AD983296127540087028B /* Assets.xcassets in Resources */,
+				390AD955296127540087028B /* Main.storyboard in Resources */,
+				390AD97D296127540087028B /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD959296127540087028B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD97C296127540087028B /* Icon.png in Resources */,
+				390AD97E296127540087028B /* Style.css in Resources */,
+				390AD961296127540087028B /* Main.storyboard in Resources */,
+				390AD980296127540087028B /* Script.js in Resources */,
+				390AD984296127540087028B /* Assets.xcassets in Resources */,
+				390AD97A296127540087028B /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD966296127540087028B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD9A3296127540087028B /* background-packed.js in Resources */,
+				390AD9A2296127540087028B /* content.js in Resources */,
+				390AD9A1296127540087028B /* manifest.json in Resources */,
+				390AD9A0296127540087028B /* icon128.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD970296127540087028B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD99F296127540087028B /* background-packed.js in Resources */,
+				390AD99E296127540087028B /* content.js in Resources */,
+				390AD99D296127540087028B /* manifest.json in Resources */,
+				390AD99C296127540087028B /* icon128.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		390AD945296127540087028B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD981296127540087028B /* ViewController.swift in Sources */,
+				390AD94D296127540087028B /* AppDelegate.swift in Sources */,
+				390AD94F296127540087028B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD957296127540087028B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD982296127540087028B /* ViewController.swift in Sources */,
+				390AD95E296127540087028B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD964296127540087028B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD985296127540087028B /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		390AD96E296127540087028B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				390AD986296127540087028B /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		390AD96B296127540087028B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 390AD967296127540087028B /* YorkRMP Extension (iOS) */;
+			targetProxy = 390AD96A296127540087028B /* PBXContainerItemProxy */;
+		};
+		390AD975296127540087028B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 390AD971296127540087028B /* YorkRMP Extension (macOS) */;
+			targetProxy = 390AD974296127540087028B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		390AD93C296127530087028B /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				390AD93D296127530087028B /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		390AD950296127540087028B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				390AD951296127540087028B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		390AD953296127540087028B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				390AD954296127540087028B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		390AD95F296127540087028B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				390AD960296127540087028B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		390AD987296127540087028B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		390AD988296127540087028B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		390AD98A296127540087028B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YorkRMP Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.YorkRMP.Extension;
+				PRODUCT_NAME = "YorkRMP Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		390AD98B296127540087028B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YorkRMP Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.YorkRMP.Extension;
+				PRODUCT_NAME = "YorkRMP Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		390AD98E296127540087028B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YorkRMP;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.YorkRMP;
+				PRODUCT_NAME = YorkRMP;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		390AD98F296127540087028B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YorkRMP;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.YorkRMP;
+				PRODUCT_NAME = YorkRMP;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		390AD991296127540087028B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/YorkRMP.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YorkRMP Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahfoozm.YorkURMP;
+				PRODUCT_NAME = "YorkRMP Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		390AD992296127540087028B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/YorkRMP.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "YorkRMP Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahfoozm.YorkURMP;
+				PRODUCT_NAME = "YorkRMP Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		390AD995296127540087028B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/YorkRMP.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YorkRMP;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahfoozm.YorkURMP;
+				PRODUCT_NAME = YorkRMP;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		390AD996296127540087028B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/YorkRMP.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = YorkRMP;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahfoozm.YorkURMP;
+				PRODUCT_NAME = YorkRMP;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		390AD939296127530087028B /* Build configuration list for PBXProject "YorkRMP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				390AD987296127540087028B /* Debug */,
+				390AD988296127540087028B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		390AD989296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				390AD98A296127540087028B /* Debug */,
+				390AD98B296127540087028B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		390AD98D296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				390AD98E296127540087028B /* Debug */,
+				390AD98F296127540087028B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		390AD990296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				390AD991296127540087028B /* Debug */,
+				390AD992296127540087028B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		390AD994296127540087028B /* Build configuration list for PBXNativeTarget "YorkRMP (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				390AD995296127540087028B /* Debug */,
+				390AD996296127540087028B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 390AD936296127530087028B /* Project object */;
+}
