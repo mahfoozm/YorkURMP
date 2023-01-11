@@ -20,3 +20,7 @@ If a professor is found, but they have no ratings, the following error will be d
 This extension can only be added as an unpacked extension (on chrome) for the time being, as it needs to be converted from MV2 to MV3 to be uploaded on the Chrome Web Store. See the releases tab for an easier download & installation instructions. 
 
 Safari support was recently added, however Apple requires that developers purchase a $99 license to publish Safari extensions (no thanks). I've built the extension for Safari anyways and added it to the latest release in case it's possible to install Safari extensions outside of the app store, but I'm not sure if this is possible.
+
+## Modifying for other universities course portals
+
+Adapting this extension for use with other universities should be easy-- just change SCHOOL_ID to match your school's unique ID, and then modify the document.querySelectorAll() method to work with your course portal (find the element in which professor names are stored on your universities course portal, and modify querySelectorAll to look for this element). You might need to change the way professor info is displayed on the course portal.
