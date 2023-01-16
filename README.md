@@ -17,9 +17,17 @@ If a professor is found, but they have no ratings, the following error will be d
 
 ![No ratings](https://i.imgur.com/wieXkVR.png)
 
-This extension can only be added as an unpacked extension (on chrome) for the time being, as it needs to be converted from MV2 to MV3 to be uploaded on the Chrome Web Store. See the releases tab for an easier download & installation instructions. 
+## Safari support
 
 Safari support was recently added, however Apple requires that developers purchase a $99 license to publish Safari extensions (no thanks). I've built the extension for Safari anyways and added it to the latest release in case it's possible to install Safari extensions outside of the app store, but I'm not sure if this is possible.
+
+## Releases vs Chrome Web Store
+
+I have recently updated the extension to include support for MV3 (Manifest V3) which enables it to be published on the Chrome Web Store. This update involved several modifications, such as the implementation of a self-hosted CORS proxy. For those who prefer it, I will continue to host the Manifest V2 extension in the releases tab. Note that there is no significant difference in performance between the two versions.
+
+## Privacy Policy
+
+Chrome Web Store extensions require a privacy policy. I am not collecting or storing any of your data.
 
 ## Modifying to use with other university course portals
 
