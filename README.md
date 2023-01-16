@@ -23,7 +23,7 @@ Safari support was recently added, however Apple requires that developers purcha
 
 ## Releases vs Chrome Web Store
 
-I have recently updated the extension to include support for MV3 (Manifest V3) which enables it to be published on the Chrome Web Store. This update involved several modifications, such as the implementation of a self-hosted CORS proxy. For those who prefer it, I will continue to host the Manifest V2 extension in the releases tab. Note that there is no significant difference in performance between the two versions.
+I have recently updated the extension to include support for MV3 (see mv3 branch, background.js rewritten) which enables it to be published on the Chrome Web Store. This update involved several modifications, such as the implementation of a self-hosted CORS proxy. For those who prefer it, I will continue to host the Manifest V2 extension in the releases tab. Note that there is no significant difference in performance between the two versions.
 
 ## Privacy Policy
 
