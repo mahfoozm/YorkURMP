@@ -1,5 +1,5 @@
 # YorkURMP
-Rate My Professors extension for the YorkU course portal
+Lightweight Rate My Professors extension for the YorkU course portal
 
 Pulls data from the Rate My Professors GraphQL API (https://www.ratemyprofessors.com/graphql)
 
