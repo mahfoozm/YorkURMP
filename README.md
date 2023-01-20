@@ -3,6 +3,8 @@ Rate My Professors extension for the YorkU course portal
 
 Pulls data from the Rate My Professors GraphQL API (https://www.ratemyprofessors.com/graphql)
 
+[Chrome](https://chrome.google.com/webstore/detail/yorkurmp/cdhfogbjpedkpmapnddalehbjdjahfmp?hl=en)
+
 ## Screenshots
 
 Currently, the extension will display the professors RMP rating, avg difficulty, percentage of students that would take again, and num of ratings with a hyperlink to the prof's RMP page.
