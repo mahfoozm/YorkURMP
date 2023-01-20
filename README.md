@@ -3,7 +3,7 @@ Rate My Professors extension for the YorkU course portal
 
 Pulls data from the Rate My Professors GraphQL API (https://www.ratemyprofessors.com/graphql)
 
-[Chrome](https://chrome.google.com/webstore/detail/yorkurmp/cdhfogbjpedkpmapnddalehbjdjahfmp?hl=en)
+[Chrome Web Store](https://chrome.google.com/webstore/detail/yorkurmp/cdhfogbjpedkpmapnddalehbjdjahfmp?hl=en)
 
 ## Screenshots
 
