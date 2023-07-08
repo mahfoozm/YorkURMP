@@ -99,13 +99,29 @@ const getProfessor = async (id) => {
 async function sendProfessorInfo(professorName) {
   // normalize the professor's name to match the format used by RMP's GraphQL API
   // (the source of all of my pain)
-  const normalizedName = professorName.normalize('NFKD');
+  const normalizedName = professorName.normalize("NFKD");
   const professors = await searchProfessor(normalizedName, SCHOOL_ID);
 
   if (professors.length === 0) {
-    return { error: 'Professor not found' };
+    // try searching without the middle name/initial
+    const names = normalizedName.split(" ");
+    if (names.length >= 2) {
+      const modifiedName = `${names[0]} ${names[names.length - 1]}`;
+      const modifiedProfessors = await searchProfessor(modifiedName, SCHOOL_ID);
+
+      if (modifiedProfessors.length === 0) {
+        return { error: "Professor not found" };
+      }
+
+      const professorID = modifiedProfessors[0].id;
+      const professor = await getProfessor(professorID);
+      console.log(professor);
+      return professor;
+    }
+
+    return { error: "Professor not found" };
   }
-  
+
   const professorID = professors[0].id;
   const professor = await getProfessor(professorID);
   console.log(professor);
