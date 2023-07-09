@@ -1,5 +1,5 @@
 # YorkURMP
-Rate My Professors extension for the YorkU course portal
+Rate My Professors extension for the YorkU course portal and VSB
 
 Pulls data from the Rate My Professors GraphQL API (https://www.ratemyprofessors.com/graphql)
 
@@ -18,6 +18,15 @@ If a professor is not found, the following error will be displayed.
 If a professor is found, but they have no ratings, the following error will be displayed.
 
 ![No ratings](https://i.imgur.com/wieXkVR.png)
+
+RMP info is now shown in Visual Schedule Builder (VSB).
+
+![image](https://github.com/mahfoozm/YorkURMP/assets/95328615/15fbcaf0-1f14-481c-808c-28fec61bb6b3)
+
+Tooltips are also shown when hovering over the professors name.
+
+![image](https://github.com/mahfoozm/YorkURMP/assets/95328615/7d50f11b-2e08-431c-804a-c54625208fd2)
+
 
 ## Safari support
 
