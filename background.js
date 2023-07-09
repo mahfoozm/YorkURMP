@@ -8,7 +8,7 @@ const SCHOOL_ID = 'U2Nob29sLTE0OTU=';
 const searchProfessor = async (name, schoolID) => {
   const response = await fetch(
     // self hosted proxy
-    `http://140.238.154.147:8088/https://www.ratemyprofessors.com/graphql`,
+    `https://www.ratemyprofessors.com/graphql`,
     {
       method: "POST",
       headers: {
@@ -53,7 +53,7 @@ const searchProfessor = async (name, schoolID) => {
 const getProfessor = async (id) => {
   const response = await fetch(
     // self hosted proxy
-    `http://140.238.154.147:8088/https://www.ratemyprofessors.com/graphql`,
+    `https://www.ratemyprofessors.com/graphql`,
     {
       method: "POST",
       headers: {
