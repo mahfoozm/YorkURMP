@@ -21,7 +21,7 @@ If a professor is found, but they have no ratings, the following error will be d
 
 RMP info is now shown in Visual Schedule Builder (VSB).
 
-![image](https://github.com/mahfoozm/YorkURMP/assets/95328615/15fbcaf0-1f14-481c-808c-28fec61bb6b3)
+![vsbss3 (1)](https://github.com/mahfoozm/YorkURMP/assets/95328615/cef40c34-0d81-45aa-8110-95cb980c2e40)
 
 Tooltips are also shown when hovering over the professors name.
 
