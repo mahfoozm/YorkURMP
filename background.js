@@ -2,58 +2,67 @@
 
 // publicly available token, yorkU school ID
 const AUTH_TOKEN = 'dGVzdDp0ZXN0';
-const SCHOOL_ID = 'U2Nob29sLTE0OTU=';
+
+// currently saerching for profs at:
+// YorkU (Keele and Glendon), TMU, and UofT (SG)
+const SCHOOL_IDS = [
+  "U2Nob29sLTE0OTU=",
+  "U2Nob29sLTEyMTI1",
+  "U2Nob29sLTE0NzE=",
+  "U2Nob29sLTE0ODQ=",
+];
 
 // for searchProfessor and getProfessor, use a self hosted proxy to bypass CORS restrictions
-const searchProfessor = async (name, schoolID) => {
-  const response = await fetch(
-    // self hosted proxy
-    `http://140.238.154.147:8088/https://www.ratemyprofessors.com/graphql`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${AUTH_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `query NewSearchTeachersQuery($text: String!, $schoolID: ID!) {
-        newSearch {
-          teachers(query: {text: $text, schoolID: $schoolID}) {
-            edges {
-              cursor
-              node {
-                id
-                firstName
-                lastName
-                school {
-                  name
+const searchProfessor = async (name, schoolIDs) => {
+  for (const schoolID of schoolIDs) {
+    const response = await fetch(
+      // self hosted proxy
+      `https://www.ratemyprofessors.com/graphql`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${AUTH_TOKEN}`,
+        },
+        body: JSON.stringify({
+          query: `query NewSearchTeachersQuery($text: String!, $schoolID: ID!) {
+          newSearch {
+            teachers(query: {text: $text, schoolID: $schoolID}) {
+              edges {
+                cursor
+                node {
                   id
+                  firstName
+                  lastName
+                  school {
+                    name
+                    id
+                  }
                 }
               }
             }
           }
-        }
-      }`,
-        variables: {
-          text: name,
-          schoolID,
-        },
-      }),
+        }`,
+          variables: {
+            text: name,
+            schoolID,
+          },
+        }),
+      }
+    );
+    const json = await response.json();
+    if (json.data.newSearch.teachers.edges.length > 0) {
+      return json.data.newSearch.teachers.edges.map((edge) => edge.node);
     }
-  );
-  const json = await response.json();
-  if (json.data.newSearch.teachers === null) {
-    return [];
   }
-
-  return json.data.newSearch.teachers.edges.map((edge) => edge.node);
+  return [];
 };
 
 
 const getProfessor = async (id) => {
   const response = await fetch(
     // self hosted proxy
-    `http://140.238.154.147:8088/https://www.ratemyprofessors.com/graphql`,
+    `https://www.ratemyprofessors.com/graphql`,
     {
       method: "POST",
       headers: {
@@ -98,14 +107,14 @@ async function sendProfessorInfo(professorName) {
   // normalize the prof's name before sending to RMP API
   // (the source of all of my pain)
   const normalizedName = professorName.normalize("NFKD");
-  const professors = await searchProfessor(normalizedName, SCHOOL_ID);
+  const professors = await searchProfessor(normalizedName, SCHOOL_IDS);
 
   if (professors.length === 0) {
     // try searching without the middle name/initial
     const names = normalizedName.split(" ");
     if (names.length >= 2) {
       const modifiedName = `${names[0]} ${names[names.length - 1]}`;
-      const modifiedProfessors = await searchProfessor(modifiedName, SCHOOL_ID);
+      const modifiedProfessors = await searchProfessor(modifiedName, SCHOOL_IDS);
 
       if (modifiedProfessors.length === 0) {
         return { error: "Professor not found" };
