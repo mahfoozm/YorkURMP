@@ -2,9 +2,9 @@
   "manifest_version": 3,
   "name": "YorkRMP",
   "description": "RMP extension for YorkU's course page.",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "icons": { "128": "assets/icon128.png" },
-  "permissions": ["activeTab", "webRequest", "https://w2prod.sis.yorku.ca/*", "https://www.ratemyprofessors.com/*"],
+  "permissions": ["activeTab", "webRequest", "https://w2prod.sis.yorku.ca/*", "https://schedulebuilder.yorku.ca/*", "https://www.ratemyprofessors.com/*"],
   "optional_permissions": ["webNavigation", "tabs"],
   "background": {
     "service_worker": "background.js"
@@ -12,7 +12,7 @@
   "event_page": "event.html",
   "content_scripts": [
     {
-      "matches": ["https://w2prod.sis.yorku.ca/*"],
+      "matches": ["https://w2prod.sis.yorku.ca/*", "https://schedulebuilder.yorku.ca/*"],
       "js": ["content.js"]
     }
   ]
