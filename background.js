@@ -1,8 +1,4 @@
-// This file is responsible for handling the communication between the extension and the website
-// It sends a message to the background script to retrieve the professor's info from RMP
-// The background script then sends the info back to this script, which inserts it into the page
-// The background script is necessary because the website is not allowed to make requests to RMP
-// due to CORS restrictions.
+// lots of annoying stuff to get around CORS and MV3 restrictions
 
 // publicly available token, yorkU school ID
 const AUTH_TOKEN = 'dGVzdDp0ZXN0';
@@ -11,7 +7,8 @@ const SCHOOL_ID = 'U2Nob29sLTE0OTU=';
 // for searchProfessor and getProfessor, use a self hosted proxy to bypass CORS restrictions
 const searchProfessor = async (name, schoolID) => {
   const response = await fetch(
-    `https://www.ratemyprofessors.com/graphql`,
+    // self hosted proxy
+    `http://140.238.154.147:8088/https://www.ratemyprofessors.com/graphql`,
     {
       method: "POST",
       headers: {
@@ -55,7 +52,8 @@ const searchProfessor = async (name, schoolID) => {
 
 const getProfessor = async (id) => {
   const response = await fetch(
-    `https://www.ratemyprofessors.com/graphql`,
+    // self hosted proxy
+    `http://140.238.154.147:8088/https://www.ratemyprofessors.com/graphql`,
     {
       method: "POST",
       headers: {
@@ -97,7 +95,7 @@ const getProfessor = async (id) => {
 
 
 async function sendProfessorInfo(professorName) {
-  // normalize the professor's name to match the format used by RMP's GraphQL API
+  // normalize the prof's name before sending to RMP API
   // (the source of all of my pain)
   const normalizedName = professorName.normalize("NFKD");
   const professors = await searchProfessor(normalizedName, SCHOOL_ID);
@@ -115,7 +113,6 @@ async function sendProfessorInfo(professorName) {
 
       const professorID = modifiedProfessors[0].id;
       const professor = await getProfessor(professorID);
-      console.log(professor);
       return professor;
     }
 
@@ -124,7 +121,6 @@ async function sendProfessorInfo(professorName) {
 
   const professorID = professors[0].id;
   const professor = await getProfessor(professorID);
-  console.log(professor);
   return professor;
 }
 
