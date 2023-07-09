@@ -13,7 +13,6 @@ const SCHOOL_IDS = [
 ];
 
 // for searchProfessor and getProfessor, use a self hosted proxy to bypass CORS restrictions
-<<<<<<< HEAD
 const searchProfessor = async (name, schoolIDs) => {
   for (const schoolID of schoolIDs) {
     const response = await fetch(
