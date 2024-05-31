@@ -1,9 +1,9 @@
-// lots of annoying stuff to get around CORS and MV3 restrictions
-
-// publicly available token, yorkU school ID
+// use self hosted proxy to get around CORS restrictions
+const PROXY_URL = 'https://www.ratemyprofessors.com/graphql';
 const AUTH_TOKEN = 'dGVzdDp0ZXN0';
+const BUG_REPORT_URL = 'https://github.com/mahfoozm/YorkURMP/issues/new/choose';
 
-// currently saerching for profs at:
+// currently searching for profs at:
 // YorkU (Keele and Glendon), TMU, and UofT (SG)
 const SCHOOL_IDS = [
   "U2Nob29sLTE0OTU=",
@@ -12,20 +12,25 @@ const SCHOOL_IDS = [
   "U2Nob29sLTE0ODQ=",
 ];
 
-// for searchProfessor and getProfessor, use a self hosted proxy to bypass CORS restrictions
+const checkProxyReachability = async () => {
+  try {
+    const response = await fetch(PROXY_URL, { method: 'HEAD' });
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+};
+
 const searchProfessor = async (name, schoolIDs) => {
   for (const schoolID of schoolIDs) {
-    const response = await fetch(
-      // self hosted proxy
-      `https://www.ratemyprofessors.com/graphql`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Basic ${AUTH_TOKEN}`,
-        },
-        body: JSON.stringify({
-          query: `query NewSearchTeachersQuery($text: String!, $schoolID: ID!) {
+    const response = await fetch(PROXY_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${AUTH_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `query NewSearchTeachersQuery($text: String!, $schoolID: ID!) {
           newSearch {
             teachers(query: {text: $text, schoolID: $schoolID}) {
               edges {
@@ -43,13 +48,12 @@ const searchProfessor = async (name, schoolIDs) => {
             }
           }
         }`,
-          variables: {
-            text: name,
-            schoolID,
-          },
-        }),
-      }
-    );
+        variables: {
+          text: name,
+          schoolID,
+        },
+      }),
+    });
     const json = await response.json();
     if (json.data.newSearch.teachers.edges.length > 0) {
       return json.data.newSearch.teachers.edges.map((edge) => edge.node);
@@ -58,19 +62,15 @@ const searchProfessor = async (name, schoolIDs) => {
   return [];
 };
 
-
 const getProfessor = async (id) => {
-  const response = await fetch(
-    // self hosted proxy
-    `https://www.ratemyprofessors.com/graphql`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${AUTH_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `query TeacherRatingsPageQuery($id: ID!) {
+  const response = await fetch(PROXY_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${AUTH_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query: `query TeacherRatingsPageQuery($id: ID!) {
         node(id: $id) {
           ... on Teacher {
             id
@@ -92,25 +92,25 @@ const getProfessor = async (id) => {
           id
         }
       }`,
-        variables: {
-          id,
-        },
-      }),
-    }
-  );
+      variables: {
+        id,
+      },
+    }),
+  });
   const json = await response.json();
   return json.data.node;
 };
 
-
 async function sendProfessorInfo(professorName) {
-  // normalize the prof's name before sending to RMP API
-  // (the source of all of my pain)
+  const isProxyReachable = await checkProxyReachability();
+  if (!isProxyReachable) {
+    return { error: `Can't connect to the proxy server, please bug me <a href="${BUG_REPORT_URL}" target="_blank">here</a>.` };
+  }
+
   const normalizedName = professorName.normalize("NFKD");
   const professors = await searchProfessor(normalizedName, SCHOOL_IDS);
 
   if (professors.length === 0) {
-    // try searching without the middle name/initial
     const names = normalizedName.split(" ");
     if (names.length >= 2) {
       const modifiedName = `${names[0]} ${names[names.length - 1]}`;
@@ -139,7 +139,7 @@ chrome.runtime.onConnect.addListener((port) => {
       port.postMessage(professor);
     }).catch((error) => {
       console.log('Error:', error);
-      port.postMessage({error});
+      port.postMessage({ error });
     });
   });
 });

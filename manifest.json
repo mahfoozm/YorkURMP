@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "YorkRMP",
   "description": "RMP extension for YorkU's course page.",
-  "version": "1.2.6",
+  "version": "1.3.0",
   "icons": { "128": "assets/icon128.png" },
   "permissions": ["activeTab", "webRequest", "https://w2prod.sis.yorku.ca/*", "https://schedulebuilder.yorku.ca/*", "https://www.ratemyprofessors.com/*"],
   "optional_permissions": ["webNavigation", "tabs"],
@@ -15,5 +15,10 @@
       "matches": ["https://w2prod.sis.yorku.ca/*", "https://schedulebuilder.yorku.ca/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mohammadmahfoozpersonal@gmail.com"
+    }
+  }
 }

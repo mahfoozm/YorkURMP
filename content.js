@@ -53,24 +53,25 @@ async function handleYUProfessorInfo(link, professorName) {
     const port = chrome.runtime.connect({ name: "professor-rating" });
     port.postMessage({ professorName });
     port.onMessage.addListener((teacher) => {
-      // If the professor is not registered on RMP, the background script will return an error message
+      // Handle the proxy server unreachable error
       if (teacher.error) {
-        insertNoProfError(link);
+        if (teacher.error.includes("Can't connect to the proxy server")) {
+          insertProxyError(link, teacher.error);
+        } else {
+          insertNoProfError(link);
+        }
       } else {
-        // get the professor's info from the response
         const avgRating = teacher.avgRating;
         const numRatings = teacher.numRatings;
         const avgDifficulty = teacher.avgDifficulty;
         const wouldTakeAgainPercent = parseInt(teacher.wouldTakeAgainPercent);
         const legacyId = teacher.legacyId;
 
-        // if the professor has no ratings, RMP will return -1 for this field
         if (wouldTakeAgainPercent === -1) {
           insertNoRatingsError(link, legacyId);
           return;
         }
 
-        // insert the professor's info into the page
         insertNumRatings(link, numRatings, legacyId);
         insertWouldTakeAgainPercent(link, wouldTakeAgainPercent);
         insertAvgDifficulty(link, avgDifficulty);
@@ -78,7 +79,6 @@ async function handleYUProfessorInfo(link, professorName) {
       }
     });
   } catch (error) {
-    // insert an error message if the request fails
     insertNoProfError(link);
   }
 }
@@ -99,11 +99,14 @@ async function handleVSBProfessorInfo(element, professorName) {
     const port = chrome.runtime.connect({ name: "professor-rating" });
     port.postMessage({ professorName });
     port.onMessage.addListener((teacher) => {
-
       if (teacher.error) {
-        insertVSBNoProfError(element);
-        insertNoProfTooltip(element);
-
+        if (teacher.error.includes("Can't connect to the proxy server")) {
+          insertProxyError(element, teacher.error);
+          insertNoProfTooltip(element);
+        } else {
+          insertVSBNoProfError(element);
+          insertNoProfTooltip(element);
+        }
       } else {
         const avgRating = teacher.avgRating;
         const numRatings = teacher.numRatings;
@@ -147,7 +150,7 @@ async function handleVSBProfessorInfo(element, professorName) {
         });
 
         tooltipContainer.addEventListener("mouseleave", () => {
-        tooltip.style.visibility = "hidden";
+          tooltip.style.visibility = "hidden";
         });
       }
     });
@@ -291,6 +294,13 @@ function insertVSBNoProfError(link) {
   link.insertAdjacentHTML(
     "afterend",
     `<div class="vsb-rating"><b>Error:</b> this professor is not registered on RateMyProfessors.</div>`
+  );
+}
+
+function insertProxyError(link, errorMessage) {
+  link.insertAdjacentHTML(
+    "afterend",
+    `<div class="rating"><b>Error:</b> ${errorMessage}</div>`
   );
 }
 
