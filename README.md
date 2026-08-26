@@ -32,10 +32,6 @@ Tooltips are also shown when hovering over the professors name.
 
 Safari support was recently added, however Apple requires that developers purchase a $99 license to publish Safari extensions (no thanks). I've built the extension for Safari anyways and added it to the latest release in case it's possible to install Safari extensions outside of the app store, but I'm not sure if this is possible.
 
-## No CORS proxy
-
-As of v1.4.0, the extension calls the RateMyProfessors GraphQL API directly from the background service worker. `https://www.ratemyprofessors.com/*` is declared under `host_permissions` in the manifest, which exempts the extension's requests from CORS, so the self-hosted CORS proxy that older builds routed through is no longer needed. (The proxy was only ever a workaround for the host patterns being listed under `permissions`, which Manifest V3 ignores.)
-
 ## Privacy Policy
 
 Chrome Web Store extensions require a privacy policy. I am not collecting or storing any of your data.
