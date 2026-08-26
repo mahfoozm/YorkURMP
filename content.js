@@ -53,10 +53,10 @@ async function handleYUProfessorInfo(link, professorName) {
     const port = chrome.runtime.connect({ name: "professor-rating" });
     port.postMessage({ professorName });
     port.onMessage.addListener((teacher) => {
-      // Handle the proxy server unreachable error
+      // Handle the RMP API unreachable error
       if (teacher.error) {
-        if (teacher.error.includes("Can't connect to the proxy server")) {
-          insertProxyError(link, teacher.error);
+        if (teacher.error.includes("Can't connect to RateMyProfessors")) {
+          insertConnectionError(link, teacher.error);
         } else {
           insertNoProfError(link);
         }
@@ -100,8 +100,8 @@ async function handleVSBProfessorInfo(element, professorName) {
     port.postMessage({ professorName });
     port.onMessage.addListener((teacher) => {
       if (teacher.error) {
-        if (teacher.error.includes("Can't connect to the proxy server")) {
-          insertProxyError(element, teacher.error);
+        if (teacher.error.includes("Can't connect to RateMyProfessors")) {
+          insertConnectionError(element, teacher.error);
           insertNoProfTooltip(element);
         } else {
           insertVSBNoProfError(element);
@@ -297,7 +297,7 @@ function insertVSBNoProfError(link) {
   );
 }
 
-function insertProxyError(link, errorMessage) {
+function insertConnectionError(link, errorMessage) {
   link.insertAdjacentHTML(
     "afterend",
     `<div class="rating"><b>Error:</b> ${errorMessage}</div>`

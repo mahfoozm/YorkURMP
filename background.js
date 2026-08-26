@@ -1,7 +1,7 @@
-// use self hosted proxy to get around CORS restrictions
-const PROXY_URL = 'https://www.ratemyprofessors.com/graphql';
+// called directly from the background service worker, which bypasses CORS
+// for origins listed in host_permissions
+const RMP_GRAPHQL_URL = 'https://www.ratemyprofessors.com/graphql';
 const AUTH_TOKEN = 'dGVzdDp0ZXN0';
-const BUG_REPORT_URL = 'https://github.com/mahfoozm/YorkURMP/issues/new/choose';
 
 // currently searching for profs at:
 // YorkU (Keele and Glendon), TMU, and UofT (SG)
@@ -12,18 +12,9 @@ const SCHOOL_IDS = [
   "U2Nob29sLTE0ODQ=",
 ];
 
-const checkProxyReachability = async () => {
-  try {
-    const response = await fetch(PROXY_URL, { method: 'HEAD' });
-    return response.ok;
-  } catch (error) {
-    return false;
-  }
-};
-
 const searchProfessor = async (name, schoolIDs) => {
   for (const schoolID of schoolIDs) {
-    const response = await fetch(PROXY_URL, {
+    const response = await fetch(RMP_GRAPHQL_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +54,7 @@ const searchProfessor = async (name, schoolIDs) => {
 };
 
 const getProfessor = async (id) => {
-  const response = await fetch(PROXY_URL, {
+  const response = await fetch(RMP_GRAPHQL_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -102,11 +93,6 @@ const getProfessor = async (id) => {
 };
 
 async function sendProfessorInfo(professorName) {
-  const isProxyReachable = await checkProxyReachability();
-  if (!isProxyReachable) {
-    return { error: `Can't connect to the proxy server, please bug me <a href="${BUG_REPORT_URL}" target="_blank">here</a>.` };
-  }
-
   const normalizedName = professorName.normalize("NFKD");
   const professors = await searchProfessor(normalizedName, SCHOOL_IDS);
 
@@ -139,7 +125,7 @@ chrome.runtime.onConnect.addListener((port) => {
       port.postMessage(professor);
     }).catch((error) => {
       console.log('Error:', error);
-      port.postMessage({ error });
+      port.postMessage({ error: "Can't connect to RateMyProfessors" });
     });
   });
 });
