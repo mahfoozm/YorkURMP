@@ -232,7 +232,10 @@ const observerConfig = {
 };
 
 observer.observe(document.body, observerConfig);
-legendBoxObserver.observe(legendBoxElement, observerConfig);
+// .legend_box only exists on VSB pages
+if (legendBoxElement) {
+  legendBoxObserver.observe(legendBoxElement, observerConfig);
+}
 
 
 // helper functions to insert the prof info into the page (gross)
